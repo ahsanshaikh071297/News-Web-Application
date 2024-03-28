@@ -1,0 +1,40 @@
+.image-slider {
+    position: relative;
+  }
+  
+  .slider-container {
+    position: relative;
+  }
+  
+  .slider-image {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .navigation-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .navigation-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  .prev {
+    left: 10px;
+  }
+  
+  .next {
+    right: 10px;
+  }
+  
