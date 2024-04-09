@@ -1,0 +1,111 @@
+<div class="body_wrapper">
+    <div class="center" style="width: 70%">
+        <div class="header_area">
+            <div class="logo floatleft">
+              <a href="#"><img src="assets/images/logo 241.png" alt="" style="width: 300px; height: 47px;" /></a>
+            </div>
+            <div class="top_menu floatleft" style="margin-left: 30px;">
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact us</a></li>
+                <li><a href="#">Subscribe</a></li>
+                <li><a href="#">Login</a></li>
+              </ul>
+            </div>
+            <div class="social_plus_search floatright">
+              <div class="social">
+                <ul>
+                  <li><a href="#" class="twitter"></a></li>
+                  <li><a href="#" class="facebook"></a></li>
+                  <li><a href="#" class="feed"></a></li>
+                </ul>
+              </div>
+              <div class="search">
+                <!-- <form action="#" method="post" id="search_form"> -->
+                  <input type="text" placeholder="Search news"  [(ngModel)]="searchQuery" (input)="onSearch($event)"/>
+                  <input type="submit" id="searchform" value="search" (click)="onSearchButtonClick()"/>
+                  <input type="hidden" value="post" name="post_type" />
+                <!-- </form> -->
+              </div>
+            </div>
+          </div>
+          <div class="main_menu_area">
+            <ul id="nav">
+              <li><a href="#">world news</a>
+                <ul>
+                  <li><a href="#">Single item</a></li>
+                  <li><a href="#">Single item</a></li>
+                  <li><a href="#">Single item</a>
+                    <ul>
+                      <li><a href="#">Single item</a></li>
+                      <li><a href="#">Single item</a></li>
+                      <li><a href="#">Single item</a></li>
+                      <li><a href="#">Single item</a></li>
+                      <li><a href="#">Single item</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#">Single item</a></li>
+                  <li><a href="#">Single item</a></li>
+                </ul>
+              </li>
+              <li><a href="#">sports</a></li>
+              <li><a href="#">tech</a>
+                <ul>
+                  <li><a href="#">Single item</a></li>
+                  <li><a href="#">Single item</a></li>
+                  <li><a href="#">Single item</a></li>
+                  <li><a href="#">Single item</a></li>
+                  <li><a href="#">Single item</a></li>
+                </ul>
+              </li>
+              <li><a href="#">business</a></li>
+              <li><a href="#">Movies</a>
+                <ul>
+                  <li><a href="#">Single item</a></li>
+                  <li><a href="#">Single item</a></li>
+                  <li><a href="#">Single item</a>
+                    <ul>
+                      <li><a href="#">Single item</a></li>
+                      <li><a href="#">Single item</a></li>
+                      <li><a href="#">Single item</a></li>
+                      <li><a href="#">Single item</a></li>
+                      <li><a href="#">Single item</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#">Single item</a></li>
+                  <li><a href="#">Single item</a></li>
+                </ul>
+              </li>
+              <li><a href="#">entertainment</a></li>
+              <li><a href="#">culture</a></li>
+              <li><a href="#">Books</a>
+                <ul>
+                  <li><a href="#">Single item</a></li>
+                  <li><a href="#">Single item</a></li>
+                  <li><a href="#">Single item</a></li>
+                  <li><a href="#">Single item</a></li>
+                  <li><a href="#">Single item</a></li>
+                </ul>
+              </li>
+              <li><a href="#">classifieds</a></li>
+              <li><a href="#">blogs</a></li>
+            </ul>
+          </div>
+          <div class="content_area">
+            <div class="main_content floatleft" style="width: 100%;">
+                <div class="single_left_coloum_wrapper"  >
+                    <h2 class="title">top news from, {{searchQuery}}</h2>
+                    <!-- <a class="more" href="#"></a> -->
+                      <div class="single_left_coloum floatleft" style="width:590%; padding-bottom: 8px ;" *ngFor="let article of searchResult.news">
+                        <img [src]="article.Image" alt="Article Image" *ngIf="article.Image" />
+                        <h3>{{ article.Title }}</h3>
+                          <p>{{ article.Description }}</p>
+                          <a class="readmore" [href]="article.Url" target="_blank">read more</a> 
+                      </div>
+                  </div>
+            </div>
+          </div>
+    </div>
+</div>
+

@@ -15,11 +15,12 @@ export class NewsApiService {
   private locationUrl = 'https://ipgeolocation.abstractapi.com/v1/?api_key=' + this.locationKey
 
   private rapidUrl = 'https://news67.p.rapidapi.com/v2/trending';
+  private searchUrl = 'https://news67.p.rapidapi.com/v2/topic-search';
   
 	private options = {
     headers: new HttpHeaders({
-      //'X-RapidAPI-Key': 'ed9b384d60msh9985f18f378ab9dp15423ajsncb686e87e938', //google
-      'X-RapidAPI-Key': 'e48e1723e4msh1cc7058612a9ec0p19913cjsn526d9ef23678', //outlook
+      'X-RapidAPI-Key': 'ed9b384d60msh9985f18f378ab9dp15423ajsncb686e87e938', //google
+      // 'X-RapidAPI-Key': 'e48e1723e4msh1cc7058612a9ec0p19913cjsn526d9ef23678', //outlook
       'X-RapidAPI-Host': 'news67.p.rapidapi.com'
     })
   };
@@ -53,13 +54,13 @@ export class NewsApiService {
     return this.http.get<any>(url);
   }
 
-  fetchNewsByCategory(category: string, country: string = 'us'): Observable<any> {
+  fetchNewsByCategory(category: string, country: string): Observable<any> {
     const url = `${this.apiUrl}/top-headlines?country=${country}&category=${category}&apiKey=${this.apiKey}`;
     return this.http.get<any>(url);
   }
 
-  searchNewsByKeyword(keyword: string, country: string = 'us'): Observable<any> {
-    const url = `${this.apiUrl}/everything?q=${keyword}&apiKey=${this.apiKey}&country=${country}`;
-    return this.http.get<any>(url);
+  searchNewsByKeyword(keyword: string): Observable<any> {
+    const url = `${this.searchUrl}?languages=en&search=${keyword}`;
+    return this.http.get<any>(url, this.options);
   }
 }
