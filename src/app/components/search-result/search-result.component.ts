@@ -29,6 +29,10 @@ export class SearchResultComponent implements OnInit {
     }
   }
 
+  navigateToCategory(category: string) {
+    this.router.navigate(['/category', category]);
+  }
+
   onSearch(event: any): void {
     const inputElement = event.target as HTMLInputElement;
     this.searchQuery = inputElement.value;

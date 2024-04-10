@@ -19,8 +19,9 @@ export class NewsApiService {
   
 	private options = {
     headers: new HttpHeaders({
-      'X-RapidAPI-Key': 'ed9b384d60msh9985f18f378ab9dp15423ajsncb686e87e938', //google
+      // 'X-RapidAPI-Key': 'ed9b384d60msh9985f18f378ab9dp15423ajsncb686e87e938', //google
       // 'X-RapidAPI-Key': 'e48e1723e4msh1cc7058612a9ec0p19913cjsn526d9ef23678', //outlook
+      'X-RapidAPI-Key': 'f3225e27admsh7a09cc494869a9ep1faf34jsn8660ae58b70c', //google 2
       'X-RapidAPI-Host': 'news67.p.rapidapi.com'
     })
   };

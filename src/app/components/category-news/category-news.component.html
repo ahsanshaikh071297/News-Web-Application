@@ -44,18 +44,18 @@
           </div>
           <div class="content_area">
             <div class="main_content floatleft" style="width: 100%;">
-                <div class="single_left_coloum_wrapper"  >
-                    <h2 class="title">top news from, {{searchQuery}}</h2>
+                <div class="single_left_coloum_wrapper" >
+                    <h2 class="title">top news from, {{category}}</h2>
                     <!-- <a class="more" href="#"></a> -->
-                      <div class="single_left_coloum floatleft" style="width:590%; padding-bottom: 8px ;" *ngFor="let article of searchResult.news">
-                        <img [src]="article.Image" alt="Article Image" *ngIf="article.Image" />
-                        <h3>{{ article.Title }}</h3>
-                          <p>{{ article.Description }}</p>
-                          <a class="readmore" [href]="article.Url" target="_blank">read more</a> 
+                      <div class="single_left_coloum floatleft" style="width:590%; padding-bottom: 8px ;"  *ngFor="let article of articles">
+                        <!-- <img [src]="article.urlToImage" alt="Article Image" *ngIf="article.Image" /> -->
+                        <img *ngIf="article.urlToImage" [src]="article.urlToImage" alt="Thumbnail" />
+                        <h3>{{ article.title }}</h3>
+                          <p>{{ article.description }}</p>
+                          <a class="readmore" [href]="article.url" target="_blank">read more</a> 
                       </div>
                   </div>
             </div>
           </div>
     </div>
 </div>
-

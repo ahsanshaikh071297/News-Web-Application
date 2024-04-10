@@ -73,11 +73,16 @@ export class HomepageComponent implements OnInit, AfterViewInit {
 
   }
 
+  navigateToCategory(category: string) {
+    this.router.navigate(['/category', category]);
+  }
+
 
   getLocation() {
     this._api.getUserLocation().subscribe(resp => {
       console.log(resp.country_code);
       this.countryCode = resp.country_code;
+      localStorage.setItem("location", this.countryCode)
       //  this.getTopHeadlines(); // Call getTopHeadlines() after obtaining countryCode
       
       // IMPORTANT
